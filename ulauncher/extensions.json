@@ -1,0 +1,23 @@
+{
+    "com.github.epholys.ultz": {
+        "id": "com.github.epholys.ultz",
+        "url": "https://github.com/Epholys/ultz",
+        "updated_at": "2020-12-05T01:41:38.436162",
+        "last_commit": "d598258a813b18e058a26332bc35501f66ccc06c",
+        "last_commit_time": "2020-11-29T14:06:15"
+    },
+    "com.github.kuenzelit.ulauncher-firefox-bookmarks": {
+        "id": "com.github.kuenzelit.ulauncher-firefox-bookmarks",
+        "url": "https://github.com/KuenzelIT/ulauncher-firefox-bookmarks",
+        "updated_at": "2020-12-05T01:41:54.732405",
+        "last_commit": "77f1de0adfc2e79ce767f645ae8ad0a0dda2783e",
+        "last_commit_time": "2019-12-07T17:27:46"
+    },
+    "com.github.brpaz.ulauncher-aws": {
+        "id": "com.github.brpaz.ulauncher-aws",
+        "url": "https://github.com/brpaz/ulauncher-aws",
+        "updated_at": "2020-12-05T01:47:26.558077",
+        "last_commit": "23b173e418e1d69342778fbea343d4c336d6eb54",
+        "last_commit_time": "2020-11-14T17:31:23"
+    }
+}

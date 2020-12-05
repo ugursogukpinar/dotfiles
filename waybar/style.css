@@ -1,0 +1,144 @@
+* {
+	font-size: 12px;
+	font-family: Roboto;
+}
+
+window.eDP-1 * {
+	font-size: 13px;
+}
+
+window#waybar {
+	/*background: #2e3440;*/
+	background: transparent;
+	color: #d8dee9;
+}
+
+#custom-pacman,
+#disk.1,
+#disk.2,
+#pulseaudio,
+#memory,
+#cpu {
+	font-family: "Symbols Nerd Font";
+}
+
+#workspaces,
+#mode,
+#window,
+#taskbar,
+#idle_inhibitor,
+#custom-weather,
+#pulseaudio,
+#memory,
+#cpu,
+#clock,
+#battery,
+#backlight,
+#disk,
+#custom-pacman,
+#custom-aur,
+#custom-swap,
+#custom-spotify,
+#custom-keyboard,
+#tray {
+	padding: 0px 7px 0px 7px;
+	margin-top: 6px;
+	/*border-radius: 4px 4px 4px 4px;*/
+	background: #5e81ac;
+	text-shadow: 1px 1px 1px #3b4252;
+}
+
+#tray {
+	margin-right: 10px;
+	border-radius: 0px 4px 4px 0px;
+}
+
+#workspaces {
+	margin-left: 10px;
+	border-radius: 4px 0px 0px 4px;
+}
+
+#mode {
+	background: #bf616a;
+}
+
+#disk.1,
+#memory {
+	padding-right: 3px;
+}
+#disk.2,
+#custom-swap {
+	padding-left: 3px;
+}
+
+#battery,
+#pulseaudio,
+#memory,
+#taskbar,
+#custom-swap,
+#custom-pacman {
+	background: #4c566a;
+}
+
+#custom-spotify {
+	background: #3b4252;
+}
+
+#cpu {
+	border-radius: 4px 0px 0px 4px;
+}
+
+#clock {
+	border-radius: 4px 0px 0px 4px;
+	margin-right: 0px;
+	padding-right: 5px;
+}
+#custom-pacman {
+	border-radius: 0px 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+#custom-weather,
+#idle_inhibitor {
+	border-radius: 0px 4px 4px 0px;
+	margin-left: 0px;
+}
+
+#workspaces {
+	padding: 0px;
+}
+#workspaces button {
+	padding: 0px 5px 0px 5px;
+	border-radius: 0px;
+}
+#workspaces button.focused {
+	background: #81a1c1;
+}
+#workspaces button:hover {
+	background: #81a1c1;
+	border: #5e81ac;
+}
+#workspaces button#sway-workspace-1 {
+	border-radius: 4px 0px 0px 4px;
+}
+
+#taskbar {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+#taskbar button {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 7px;
+	padding-right: 3px;
+	border-radius: 0px;
+}
+#taskbar button.active {
+	background: #b48ead;
+}
+
+#custom-keyboard {
+	border-radius: 4px;
+	margin-right: 5px;
+	padding-right: 5px;
+}
