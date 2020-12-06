@@ -34,6 +34,23 @@ set $workspace5 "5- Chat"
 set $workspace6 "6- VM"
 set $workspace0 "10- Music"
 
+
+set $laptop_screen "eDP-1"
+set $samsung_monitor "Samsung Electric Company U28E590 HTPKA00046"
+
+
+
+##########################################
+### Output configuration
+##########################################
+output $samsung_monitor scale 1.25 mode 2560x1440 pos 0,0
+output $laptop_screen scale 1.7777777 pos 0,0
+output * bg $wallpaper fill
+
+bindswitch --reload --locked lid:on output $laptop_screen disable
+bindswitch --reload --locked lid:off output $laptop_screen enable
+
+
 ##########################################
 ### Input configuration
 ##########################################
@@ -311,9 +328,5 @@ exec ulauncher
 exec thunderbird
 # exec 1password
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
+exec_always pkill kanshi || true && kanshi
 ##############################################################
-
-
-
-
-include ~/.config/sway/config.d/*.conf

@@ -1,0 +1,9 @@
+profile {
+	output eDP-1 disable
+	output "Samsung Electric Company U28E590 HTPKA00046" mode 2560x1440 position 0,0 scale 1.25
+}
+
+profile {
+	output eDP-1 enable scale 1.7777777777777 position 0,0
+}
+
