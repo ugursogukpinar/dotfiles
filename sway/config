@@ -103,11 +103,9 @@ exec_always {
 ### Idle configuration
 ##########################################
 exec swayidle -w \
-#          timeout 300 'swaylock -f' \
-#          timeout 350 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          timeout 300 'swaylock -f' \
+          timeout 350 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           before-sleep 'swaylock -f'
-
-
 
 
 ##########################################
@@ -137,8 +135,7 @@ assign [class="Thunderbird"] workspace $workspace5
 assign [class="Spotify"] workspace $workspace0
 
 for_window [class="Google-chrome"] inbihit_idle fullscreen
-for_window [app_id="firefox"] inbihit_idle fullscreen
-for_window [app_id="firefox-wayland"] inbihit_idle fullscreen
+for_window [class="firefox"] inbihit_idle fullscreen
 for_window [app_id="ulauncher"] border none
 
 
