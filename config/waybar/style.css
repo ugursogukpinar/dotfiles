@@ -88,9 +88,14 @@ window#waybar {
 #workspaces button {
 	padding: 0px 5px 0px 5px;
 	border-radius: 0px;
+	border-bottom: 2px solid transparent;
 }
 #workspaces button.focused {
 	background: #5e81ac;
+	border-bottom: 2px solid #c9545d;
+}
+#workspaces button.urgent {
+	color: #c9545d;
 }
 #workspaces button#sway-workspace-1 {
 	border-top-left-radius: 7px;

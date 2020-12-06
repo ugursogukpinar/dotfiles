@@ -16,7 +16,7 @@
 		"sway/window"
 	],
 	"modules-right": [
-		"custom/keyboard-layout",
+		"sway/language",
 		"custom/separator",
 		"battery",
 		"custom/separator",
@@ -41,6 +41,10 @@
 	},
 	"sway/mode": {
 		"format": "{}"
+	},
+	"sway/language": {
+    "format": " {}",
+    "max-length": 50
 	},
 	"backlight": {
 		"format": "{icon} {percent}%",
@@ -123,12 +127,7 @@
 		"format": "",
 		//"rotate": 90,
 		"tooltip": false
-	},
-    "custom/keyboard-layout": {
-        "format": " {}",
-        "exec": "pkill kb_layout || true && ~/.config/waybar/modules/kb_layout '1:1:AT_Translated_Set_2_keyboard'",
-        "tooltip": false
-    }
+	}
 },
 {
 	"layer": "bottom",
