@@ -1,34 +1,32 @@
 // -*- mode: json -*-
-{
+[{
 	"layer": "bottom",
 	"position": "top",
+	"margin-bottom": 5,
+	"margin-right": 5,
+	"margin-left": 5,
 	"modules-left": [
 		"sway/workspaces",
-		"wlr/taskbar",
+		"custom/separator",
+		"idle_inhibitor",
+		"custom/separator",
 		"sway/mode",
-		"custom/spotify",
-		"idle_inhibitor"
 	],
 	"modules-center": [
-		"clock",
-		"custom/weather"
+		"custom/pacman"
 	],
 	"modules-right": [
-	    "custom/keyboard",
-		"cpu",
-		"memory",
-		"custom/swap",
-		"disk#1",
-		"disk#2",
-		"pulseaudio",
-		"backlight",
+		"custom/keyboard-layout",
+		"custom/separator",
 		"battery",
-		"tray"
+		"custom/separator",
+		"pulseaudio",
+		"clock"
 	],
 	"sway/workspaces": {
 		"disable-scroll": true,
- 		"all-outputs": true,
- 		"format": "{name} {icon}",
+		"all-outputs": true,
+		"format": "{name} {icon}",
 		"format-icons": {
 			"1- Web": "",
 			"2- Terminals": "",
@@ -50,27 +48,20 @@
 		"on-scroll-up": "brightnessctl set +5%",
 		"on-scroll-down": "brightnessctl set 5%-"
 	},
-	"wlr/taskbar": {
-		"all-outputs": true,
-		"format": "{icon}",
-		"icon-theme": "DarK-svg",
-		"icon-size": 14,
-		"on-click": "activate"
-	},
 	"clock": {
 		"format": "{:%a %d %b %H:%M}",
-		"tooltip": false
+		"tooltip": true
 	},
 	"pulseaudio": {
 		"format": "{icon} {volume}%  {format_source}",
-		"format-bluetooth": "{icon}  {volume}%  {format_source}",
+		"format-bluetooth": "{icon} {volume}%  {format_source}",
 		"format-bluetooth-muted": " {icon}  {format_source}",
 		"format-muted": " {format_source}",
 		"format-source": " {volume}%",
 		"format-source-muted": "",
 		"format-icons": {
 			"headphone": "",
-			"hands-free": "",
+			"hands-free": "",
 			"headset": "",
 			"phone": "",
 			"portable": "",
@@ -89,7 +80,7 @@
 	},
 	"cpu": {
 		"interval": 1,
-		"format": "閭 {usage:2}%"
+		"format": " {usage:2}%"
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
@@ -115,7 +106,7 @@
 	},
 	"disk#1": {
 		"interval": 5,
-		"format": "力 {percentage_used:2}%",
+		"format": "  {percentage_used:2}%",
 		"path": "/"
 	},
 	"disk#2": {
@@ -123,27 +114,56 @@
 		"format": " {percentage_used:2}%",
 		"path": "/home"
 	},
-	"tray": {
-		"icon-size": 14,
-		"spacing": 10
-	},
 	"custom/pacman": {
 		"format": " {}",
-		"interval": 900, // every 15 minutes
+		"interval": 1800, // every 30 minutes
 		"exec": "checkupdates | wc -l", // # of updates
 		"exec-if": "exit 0", // always run; consider advanced run conditions
 		"on-click": "~/.config/waybar/modules/update-system.sh; pkill -RTMIN+8 waybar", // update system
 		"signal": 8,
 		"tooltip": false
 	},
-	"custom/weather": {
-		"exec": "~/.config/waybar/modules/weather.sh",
-		"interval": 3600
-	},
 	"custom/swap": {
 		"format": " {}",
 		"interval": 5,
 		"exec": "free -h | grep Swap | awk '{print $3}'"
+	},
+	"custom/separator": {
+		"format": "",
+		//"rotate": 90,
+		"tooltip": false
+	},
+    "custom/keyboard-layout": {
+        "format": " {}",
+        "exec": "pkill kb_layout || true && ~/.config/waybar/modules/kb_layout '1:1:AT_Translated_Set_2_keyboard'",
+        "tooltip": false
+    }
+},
+{
+	"layer": "bottom",
+	"position": "bottom",
+	"margin-right": 5,
+	"margin-left": 5,
+	"margin-top": 5,
+	"modules-left": ["custom/weather", "wlr/taskbar"],
+	"modules-center": [],
+	"modules-right": ["tray", "custom/spotify"],
+	"wlr/taskbar": {
+		"all-outputs": false,
+		"format": "{icon}",
+		"icon-theme": "DarK-svg",
+		"icon-size": 24,
+		"on-click": "activate",
+		"on-middle-click": "close",
+		"on-right-click": "minimize"
+	},
+	"tray": {
+		"icon-size": 24,
+		"spacing": 10
+	},
+	"custom/weather": {
+		"exec": "~/.config/waybar/modules/weather.sh",
+		"interval": 3600
 	},
 	"custom/spotify": {
 		"interval": 1,
@@ -151,10 +171,5 @@
 		"exec": "~/.config/waybar/modules/spotify.sh",
 		"exec-if": "pgrep spotify",
 		"escape": true
-	},
-    "custom/keyboard": {
-        "format": "{}  ",
-        "exec": "pkill kb_layout || true && ~/.config/waybar/modules/kb_layout '1:1:AT_Translated_Set_2_keyboard'",
-        "tooltip": false
-    }
-}
+	}
+}]
