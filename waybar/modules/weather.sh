@@ -1,3 +1,3 @@
 #!/bin/bash
-report=$(curl wttr.in/?format="%C,+%t\n" | sed -e 's/,.*:/:/')
+report=$(curl wttr.in/Kocaeli?format="%C,+%t\n" | sed -e 's/,.*:/:/')
 echo $report
