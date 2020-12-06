@@ -4,7 +4,7 @@
 	"position": "top",
 	"modules-left": [
 		"sway/workspaces",
-		// "wlr/taskbar",
+		"wlr/taskbar",
 		"sway/mode",
 		"custom/spotify",
 		"idle_inhibitor"
@@ -53,7 +53,8 @@
 	"wlr/taskbar": {
 		"all-outputs": true,
 		"format": "{icon}",
-		"icon-size": 12,
+		// "icon-theme": "DarK-svg",
+		"icon-size": 14,
 		"on-click": "activate"
 	},
 	"clock": {
@@ -62,7 +63,7 @@
 	},
 	"pulseaudio": {
 		"format": "{icon} {volume}%  {format_source}",
-		"format-bluetooth": "{icon} {volume}%  {format_source}",
+		"format-bluetooth": "{icon}  {volume}%  {format_source}",
 		"format-bluetooth-muted": " {icon}  {format_source}",
 		"format-muted": " {format_source}",
 		"format-source": " {volume}%",
@@ -70,7 +71,7 @@
 		"format-icons": {
 			"headphone": "",
 			"hands-free": "",
-			"headset": "",
+			"headset": "",
 			"phone": "",
 			"portable": "",
 			"car": "",
@@ -123,7 +124,7 @@
 		"path": "/home"
 	},
 	"tray": {
-		"icon-size": 12,
+		"icon-size": 14,
 		"spacing": 10
 	},
 	"custom/pacman": {
