@@ -53,7 +53,7 @@
 	"wlr/taskbar": {
 		"all-outputs": true,
 		"format": "{icon}",
-		// "icon-theme": "DarK-svg",
+		"icon-theme": "DarK-svg",
 		"icon-size": 14,
 		"on-click": "activate"
 	},
