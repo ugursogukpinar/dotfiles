@@ -102,10 +102,10 @@ exec_always {
 ##########################################
 ### Idle configuration
 ##########################################
-#exec swayidle -w \
+exec swayidle -w \
 #          timeout 300 'swaylock -f' \
 #          timeout 350 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f'
+          before-sleep 'swaylock -f'
 
 
 
