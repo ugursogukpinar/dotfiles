@@ -43,12 +43,12 @@ set $samsung_monitor "Samsung Electric Company U28E590 HTPKA00046"
 ##########################################
 ### Output configuration
 ##########################################
-output $samsung_monitor scale 1.25 mode 2560x1440 pos 0,0
-output $laptop_screen scale 1.7777777 pos 0,0
+output $samsung_monitor mode 2560x1440 scale 1.25
+output $laptop_screen mode 2560x1440 scale 1.7777777777777
 output * bg $wallpaper fill
 
-bindswitch --reload --locked lid:on output $laptop_screen disable
-bindswitch --reload --locked lid:off output $laptop_screen enable
+bindswitch --reload --locked lid:on output $laptop_screen disable dpms off
+bindswitch --reload --locked lid:off output $laptop_screen enable dpms on
 
 
 ##########################################
@@ -327,5 +327,5 @@ exec ulauncher
 exec thunderbird
 # exec 1password
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
-exec_always pkill kanshi || true && kanshi
+# exec_always pkill kanshi || true && kanshi
 ##############################################################

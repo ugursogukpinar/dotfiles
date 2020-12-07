@@ -1,11 +1,4 @@
 {
-    "com.github.epholys.ultz": {
-        "id": "com.github.epholys.ultz",
-        "url": "https://github.com/Epholys/ultz",
-        "updated_at": "2020-12-05T01:41:38.436162",
-        "last_commit": "d598258a813b18e058a26332bc35501f66ccc06c",
-        "last_commit_time": "2020-11-29T14:06:15"
-    },
     "com.github.kuenzelit.ulauncher-firefox-bookmarks": {
         "id": "com.github.kuenzelit.ulauncher-firefox-bookmarks",
         "url": "https://github.com/KuenzelIT/ulauncher-firefox-bookmarks",
@@ -19,5 +12,26 @@
         "updated_at": "2020-12-05T01:47:26.558077",
         "last_commit": "23b173e418e1d69342778fbea343d4c336d6eb54",
         "last_commit_time": "2020-11-14T17:31:23"
+    },
+    "com.github.manahter.ulauncher-ip-analysis": {
+        "id": "com.github.manahter.ulauncher-ip-analysis",
+        "url": "https://github.com/manahter/ulauncher-IP-Analysis",
+        "updated_at": "2020-12-07T00:16:09.667497",
+        "last_commit": "1a52cd56cb550c0d9ce1447cde7826fdf64ad5d7",
+        "last_commit_time": "2020-11-22T14:42:29"
+    },
+    "com.github.ceroprogramming.ulauncher-pulsecontrol": {
+        "id": "com.github.ceroprogramming.ulauncher-pulsecontrol",
+        "url": "https://github.com/CeroProgramming/ulauncher-pulsecontrol",
+        "updated_at": "2020-12-07T00:16:35.904356",
+        "last_commit": "764a8b11202ce55dd574fec10ab447601958ed29",
+        "last_commit_time": "2020-11-27T15:56:19"
+    },
+    "com.github.fisadev.ulauncher-better-file-browser": {
+        "id": "com.github.fisadev.ulauncher-better-file-browser",
+        "url": "https://github.com/fisadev/ulauncher-better-file-browser",
+        "updated_at": "2020-12-07T00:19:47.686298",
+        "last_commit": "8ec8a0dda09e172de62051cd1f251816ce4af368",
+        "last_commit_time": "2019-09-06T19:20:09"
     }
 }
