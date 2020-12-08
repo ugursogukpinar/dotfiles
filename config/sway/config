@@ -81,6 +81,11 @@ gaps outer 4
 
 font pango:Roboto 12
 
+
+client.unfocused #2e3440 #2e3440 #d8dee9  
+client.focused #5e81ac #5e81ac #d8dee9  
+client.focused_inactive #b48ead #b48ead #d8dee9
+
 ##########################################
 ### Gnome settings
 ##########################################
@@ -122,7 +127,7 @@ assign [app_id="Alacritty"] workspace $workspace2
 assign [app_id="kitty"] workspace $workspace2
 
 assign [class="Code"] workspace $workspace3
-assign [app_id="sublime_text"] workspace $workspace3
+# assign [app_id="sublime_text"] workspace $workspace3
 
 assign [class="Valentina Studio"] workspace $workspace4
 assign [class="Postman"] workspace $workspace4
