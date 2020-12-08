@@ -88,8 +88,8 @@ client.focused_inactive #b48ead #b48ead #d8dee9
 
 
 titlebar_border_thickness 0
-
 popup_during_fullscreen leave_fullscreen
+
 
 ##########################################
 ### Gnome settings
@@ -99,12 +99,14 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'NordSur-dark'
     # gsettings set $gnome-schema gtk-theme 'Nordic'
     gsettings set $gnome-schema icon-theme 'Tela-circle-grey-dark'
+    # gsettings set $gnome-schema icon-theme 'Adwaita'
     gsettings set $gnome-schema font-name 'Roboto 10'
     gsettings set $gnome-schema monospace-font-name 'Roboto Mono 10'
     gsettings set $gnome-schema document-font-name 'Roboto 10'
     gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Bold 10'
     gsettings set org.gnome.desktop.wm.preferences button-layout ''
     # gsettings set org.gnome.desktop.wm.preferences theme "Nordic"
+    gsettings set org.gnome.desktop.wm.preferences theme "NordSur-dark"
     
     gsettings set org.gnome.desktop.default-applications.terminal exec alacritty
     gsettings set org.gnome.desktop.default-applications.terminal exec-arg -e
@@ -149,7 +151,11 @@ assign [class="Spotify"] workspace $workspace0
 for_window [class="Google-chrome"] inhibit_idle fullscreen
 for_window [class="firefox"] inhibit_idle fullscreen
 for_window [app_id="ulauncher"] border none
+for_window [app_id="avizo-service"] border none 
 
+no_focus [app_id="avizo-service"]
+
+# for_window [class="*"]
 
 
 
@@ -182,22 +188,31 @@ for_window [app_id="ulauncher"] border none
 
     $bindtocode $mod+m exec $filemanager
 
-    $bindtocode Shift+Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
-    $bindtocode $mod+Shift+p exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+    $bindtocode Shift+Print exec grim - | swappy -f -
+    $bindtocode $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
     
     # Screen recording
     $bindtocode $mod+Shift+R exec wf-recorder -f $(xdg-user-dir VIDEOS)/$(date +'recording_%Y-%m-%d-%H%M%S.mp4')
     $bindtocode $mod+Shift+Alt+R exec pkill --signal SIGINT wf-recorder
 
 
-    $bindtocode XF86AudioRaiseVolume exec amixer set Master 10%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
-    $bindtocode XF86AudioLowerVolume exec amixer set Master 10%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
-    $bindtocode XF86AudioMute exec amixer -D pulse set Master 1+ toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
-    $bindtocode XF86AudioMicMute exec amixer -D pulse set Capture toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+    # $bindtocode XF86AudioRaiseVolume exec amixer set Master 10%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+    # $bindtocode XF86AudioLowerVolume exec amixer set Master 10%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+    # $bindtocode XF86AudioMute exec amixer -D pulse set Master 1+ toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+    #$bindtocode XF86AudioMicMute exec amixer -D pulse set Capture toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+    
+    $bindtocode XF86AudioRaiseVolume exec volumectl raise
+    $bindtocode XF86AudioLowerVolume exec volumectl lower
+    $bindtocode XF86AudioMute exec volumectl mute
+
+
+    # $bindtocode XF86MonBrightnessUp exec lightctl raise
+    # $bindtocode XF86MonBrightnessDown exec lightctl lower
 
     $bindtocode XF86MonBrightnessDown exec brightnessctl set 5%- | brightnessctl --machine-readable | cut -f 4 -d ',' | cut -f 1 -d '%' > $SWAYSOCK.wob
     $bindtocode XF86MonBrightnessUp exec brightnessctl set +5% | brightnessctl --machine-readable | cut -f 4 -d ',' | cut -f 1 -d '%' > $SWAYSOCK.wob
 
+    
     $bindtocode XF86AudioPlay exec playerctl play-pause
     $bindtocode XF86AudioNext exec playerctl next
     $bindtocode XF86AudioPrev exec playerctl previous
@@ -331,10 +346,13 @@ bar {
 ##############################################################
 # Autostart:
 ##############################################################
+exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec blueman-applet
+exec nm-applet --indicator
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 exec ulauncher
 exec thunderbird
+exec avizo-service
 # exec 1password
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 # exec_always pkill kanshi || true && kanshi

@@ -4,7 +4,8 @@ export LANG=en_US.UTF-8
 export VISUAL="vim"
 export TERM=xterm-256color
 export GTK1_RC_FILES=~/.config/gtk-3.0/gtkrc
-export GTK_THEME=NordSur-dark
+# export GTK_THEME=NordSur-dark
+# export GTK_THEME=Nordic
 export XDG_DATA_DIRS=/usr/share/:/usr/local/share/:/var/lib/snapd/desktop
 # export XDG_CURRENT_DESKTOP=Unity
 
