@@ -7,7 +7,6 @@ export GTK1_RC_FILES=~/.config/gtk-3.0/gtkrc
 export GTK_THEME=NordSur-dark
 export XDG_DATA_DIRS=/usr/share/:/usr/local/share/:/var/lib/snapd/desktop
 # export XDG_CURRENT_DESKTOP=Unity
-# export XDG_CURRENT_DESKTOP=sway
 
 export XKB_DEFAULT_LAYOUT=us
 
