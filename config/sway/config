@@ -86,6 +86,11 @@ client.unfocused #2e3440 #2e3440 #d8dee9
 client.focused #5e81ac #5e81ac #d8dee9  
 client.focused_inactive #b48ead #b48ead #d8dee9
 
+
+titlebar_border_thickness 0
+
+popup_during_fullscreen leave_fullscreen
+
 ##########################################
 ### Gnome settings
 ##########################################
