@@ -16,11 +16,7 @@
 		"sway/window"
 	],
 	"modules-right": [
-		"sway/language",
-		"custom/separator",
-		"battery",
-		"custom/separator",
-		"pulseaudio",
+		"tray",
 		"clock"
 	],
 	"sway/workspaces": {
@@ -34,33 +30,93 @@
 			// "4": "",
 			// "5- Chat": "",
 			// "6- VM": "",
-			"urgent": "",
-			"focused": "",
-			"default": ""
+			"urgent": "",
+			"focused": "",
+			"default": ""
 		}
 	},
 	"sway/mode": {
 		"format": "{}"
 	},
-	"sway/language": {
-    "format": " {}",
-    "max-length": 50
-	},
-	"backlight": {
-		"format": "{icon} {percent}%",
-		"format-icons": ["", ""],
-		"on-scroll-up": "brightnessctl set +5%",
-		"on-scroll-down": "brightnessctl set 5%-"
-	},
 	"clock": {
 		"format": "{:%a %d %b %H:%M}",
 		"tooltip": true
 	},
+	"tray": {
+		"icon-size": 24,
+		"spacing": 10
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
+	}
+},
+	{
+		"layer": "bottom",
+		"position": "bottom",
+		"margin-right": 5,
+		"margin-left": 5,
+		"margin-top": 5,
+		"modules-left": ["custom/weather", "wlr/taskbar"],
+		"modules-center": [],
+		"modules-right": [
+			"sway/language",
+			"backlight",
+			"disk#1",
+			"disk#2",
+			"memory",
+			"cpu",
+			"battery",
+			"pulseaudio",
+			"custom/spotify"
+		],
+		"wlr/taskbar": {
+			"all-outputs": false,
+			"format": "{icon}",
+		  "icon-theme": "DarK-svg",
+			"icon-size": 24,
+			"on-click": "activate",
+			"on-middle-click": "close",
+			"on-right-click": "minimize"
+		},
+		"custom/weather": {
+			"exec": "~/.config/waybar/modules/weather.sh",
+			"interval": 3600
+		},
+		"custom/spotify": {
+			"interval": 1,
+			"return-type": "json",
+			"exec": "~/.config/waybar/modules/spotify.sh",
+			"exec-if": "pgrep spotify",
+			"escape": true
+		},
+		"custom/pacman": {
+			"format": " {}",
+			"interval": 1800, // every 30 minutes
+			"exec": "checkupdates | wc -l", // # of updates
+			"exec-if": "exit 0", // always run; consider advanced run conditions
+			// "on-click": "~/.config/waybar/modules/update-system.sh; pkill -RTMIN+8 waybar", // update system
+			"signal": 8,
+			"tooltip": false
+		},
+	"sway/language": {
+		"format": " {}",
+		"max-length": 50
+	},
+	"backlight": {
+		"format": "{icon} {percent}%",
+		"format-icons": ["", ""],
+		// "on-scroll-up": "brightnessctl set +5%",
+		// "on-scroll-down": "brightnessctl set 5%-"
+		},
 	"pulseaudio": {
 		"format": "{icon} {volume}%  {format_source}",
 		"format-bluetooth": "{icon} {volume}%  {format_source}",
-		"format-bluetooth-muted": " {icon}  {format_source}",
-		"format-muted": " {format_source}",
+		"format-bluetooth-muted": " {icon}  {format_source}",
+		"format-muted": " {format_source}",
 		"format-source": " {volume}%",
 		"format-source-muted": "",
 		"format-icons": {
@@ -85,14 +141,7 @@
 	"cpu": {
 		"interval": 1,
 		"format": " {usage:2}%"
-	},
-	"idle_inhibitor": {
-		"format": "{icon}",
-		"format-icons": {
-			"activated": "",
-			"deactivated": ""
-		}
-	},
+		},
 	"battery": {
 		"states": {
 			"good": 95,
@@ -110,7 +159,7 @@
 	},
 	"disk#1": {
 		"interval": 5,
-		"format": "  {percentage_used:2}%",
+		"format": " {percentage_used:2}%",
 		"path": "/"
 	},
 	"disk#2": {
@@ -126,49 +175,6 @@
 	"custom/separator": {
 		"format": "",
 		//"rotate": 90,
-		"tooltip": false
-	}
-},
-{
-	"layer": "bottom",
-	"position": "bottom",
-	"margin-right": 5,
-	"margin-left": 5,
-	"margin-top": 5,
-	"modules-left": ["custom/weather", "wlr/taskbar"],
-	"modules-center": [],
-	"modules-right": ["tray", "custom/spotify"],
-	"wlr/taskbar": {
-		"all-outputs": false,
-		"format": "{icon}",
-		"icon-theme": "DarK-svg",
-		"icon-size": 24,
-		"on-click": "activate",
-		"on-middle-click": "close",
-		"on-right-click": "minimize"
-	},
-	"tray": {
-		"icon-size": 24,
-		"spacing": 10
-	},
-	"custom/weather": {
-		"exec": "~/.config/waybar/modules/weather.sh",
-		"interval": 3600
-	},
-	"custom/spotify": {
-		"interval": 1,
-		"return-type": "json",
-		"exec": "~/.config/waybar/modules/spotify.sh",
-		"exec-if": "pgrep spotify",
-		"escape": true
-	},
-	"custom/pacman": {
-		"format": " {}",
-		"interval": 1800, // every 30 minutes
-		"exec": "checkupdates | wc -l", // # of updates
-		"exec-if": "exit 0", // always run; consider advanced run conditions
-		// "on-click": "~/.config/waybar/modules/update-system.sh; pkill -RTMIN+8 waybar", // update system
-		"signal": 8,
 		"tooltip": false
 	}
 }]

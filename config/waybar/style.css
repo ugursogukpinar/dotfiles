@@ -1,6 +1,6 @@
 * {
-	font-size: 13px;
-	font-family: Roboto;
+	font-size: 14px;
+	font-family: Roboto, 'Symbols Nerd Font';
 	min-height: 30px;
 }
 
@@ -8,15 +8,6 @@ window#waybar {
 	color: #d8dee9;
 	background: rgba(46,52,64, 0.75);
 	border-radius: 7px;
-}
-
-#custom-pacman,
-#custom-separator,
-#pulseaudio,
-#memory,
-#disk.2,
-#cpu {
-	font-family: "Symbols Nerd Font";
 }
 
 #workspaces,
@@ -56,15 +47,6 @@ window#waybar {
 	background: #bf616a;
 }
 
-#disk.1,
-#memory {
-	padding-right: 3px;
-}
-#disk.2,
-#custom-swap {
-	padding-left: 3px;
-}
-
 #clock,
 #custom-spotify {
 	background: rgba(94,129,172, 0.75);
@@ -102,7 +84,10 @@ window#waybar {
 	border-bottom-left-radius: 7px;
 }
 
+
+
 #taskbar {
+	font-family: 'DarK-svg';
 	padding: 0px;
 }
 #taskbar button {

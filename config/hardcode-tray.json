@@ -1,0 +1,11 @@
+{
+    "blacklist": [],
+    "icons": {
+        "theme": "Numix",
+        "size": 24
+    },
+    "conversion_tool": "CairoSVG",
+    "backup_ignore": true,
+    "nwjs": "$HOME/sdk/nwjs/",
+    "scaling_factor": 1
+}
