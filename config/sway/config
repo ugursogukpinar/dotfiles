@@ -91,6 +91,8 @@ titlebar_border_thickness 0
 popup_during_fullscreen leave_fullscreen
 
 
+seat seat0 xcursor_theme 'volantes-cursors' 48
+
 ##########################################
 ### Gnome settings
 ##########################################
@@ -101,6 +103,8 @@ exec_always {
     gsettings set $gnome-schema font-name 'Roboto 10'
     gsettings set $gnome-schema monospace-font-name 'Roboto Mono 10'
     gsettings set $gnome-schema document-font-name 'Roboto 10'
+    gsettings set $gnome-schema cursor-theme 'volantes-cursors'
+    gsettings set $gnome-schema cursor-size 48
     gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Bold 10'
     gsettings set org.gnome.desktop.wm.preferences button-layout ''
     gsettings set org.gnome.desktop.wm.preferences theme "NordSur-dark"
