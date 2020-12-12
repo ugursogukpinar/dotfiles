@@ -5,18 +5,21 @@ export VISUAL="vim"
 export TERM=xterm-256color
 export GTK1_RC_FILES=~/.config/gtk-3.0/gtkrc
 export XDG_DATA_DIRS=/usr/share/:/usr/local/share/:/var/lib/snapd/desktop
-export XDG_CURRENT_DESKTOP=Unity
-# export XDG_CURRENT_DESKTOP=sway
+
 
 export XKB_DEFAULT_LAYOUT=us
 
 if [ $(tty) = "/dev/tty1" ]; then
-	export CLUTTER_BACKEND=wayland
-
-	#    export GDK_BACKEND=wayland
-	export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-	#    export QT_QPA_PLATFORM=wayland
-	export QT_WAYLAND_FORCE_DPI=phyiscal
+    # export XDG_CURRENT_DESKTOP=Unity
+    export XDG_CURRENT_DESKTOP=sway
+	export CLUTTER_BACKEND=wayland 
+    export XDG_SESSION_TYPE=wayland
+	# export GDK_BACKEND=wayland
+	# export QT_QPA_PLATFORM=wayland
+    # export MOZ_ENABLE_WAYLAND=1
+    
+    export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    export QT_WAYLAND_FORCE_DPI=physical
 	export ECORE_EVAS_EVAS_ENGINE=wayland_egl
 	export ELM_ENGINE=wayland_egl
 	export SDL_VIDEODRIVER=wayland

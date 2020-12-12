@@ -129,6 +129,7 @@ exec swayidle -w \
 ##########################################
 assign [class="Google-chrome"] workspace $workspace1
 assign [class="firefox"] workspace $workspace1
+assign [app_id="firefox"] workspace $workspace1
 
 assign [app_id="termite"] workspace $workspace2
 assign [app_id="Alacritty"] workspace $workspace2
@@ -146,6 +147,7 @@ assign [app_id="filezilla"] workspace $workspace4
 
 assign [class="Slack"] workspace $workspace5
 assign [class="Thunderbird"] workspace $workspace5
+assign [app_id="thunderbird"] workspace $workspace5
 
 assign [class="Spotify"] workspace $workspace0
 
@@ -157,6 +159,7 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 
 for_window [app_id="ulauncher"] border none
 for_window [app_id="avizo-service"] border none 
+
 
 no_focus [app_id="avizo-service"]
 
@@ -351,7 +354,7 @@ bar {
 ##############################################################
 # Autostart:
 ##############################################################
-exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+# exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 exec blueman-applet
 exec nm-applet --indicator
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
