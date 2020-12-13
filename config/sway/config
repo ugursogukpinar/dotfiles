@@ -13,7 +13,7 @@ set $right l
 
 
 set $term alacritty
-set $filemanager thunar
+set $filemanager nautilus -w
 
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
@@ -151,6 +151,7 @@ assign [class="Thunderbird"] workspace $workspace5
 assign [app_id="thunderbird"] workspace $workspace5
 
 assign [class="Spotify"] workspace $workspace0
+assign [instance="spotify"] workspace $workspace0
 
 # for_window [class="Google-chrome"] inhibit_idle fullscreen
 # for_window [class="firefox"] inhibit_idle fullscreen
@@ -188,6 +189,8 @@ no_focus [app_id="avizo-service"]
     # Swaylock
     $bindtocode $mod+Escape exec swaylock -f -i $wallpaper
 
+    # Clipman history
+    $bindtocode $mod+Comma exec clipman pick --histpath="~/.local/share/clipman-primary.json" -t wofi
 
     $bindtocode $mod+Control+Right exec playerctl next
     $bindtocode $mod+Control+Left exec playerctl previous
