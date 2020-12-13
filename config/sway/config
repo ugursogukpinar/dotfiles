@@ -25,6 +25,7 @@ set $bindtocode bindsym --to-code
 set $wallpapers_path $HOME/wallpapers
 set $wallpaper `find $wallpapers_path -type f | shuf -n 1`
 
+set $screenrecorder `bash $HOME/scripts/toggle-screen-recorder.sh`
 
 set $workspace1 "1- Web"
 set $workspace2 "2- Terminals"
@@ -200,8 +201,7 @@ no_focus [app_id="avizo-service"]
     $bindtocode $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
     
     # Screen recording
-    $bindtocode $mod+Shift+R exec wf-recorder -f $(xdg-user-dir VIDEOS)/$(date +'recording_%Y-%m-%d-%H%M%S.mp4')
-    $bindtocode $mod+Shift+Alt+R exec pkill --signal SIGINT wf-recorder
+    $bindtocode $mod+Shift+R exec $screenrecorder
 
 
     # $bindtocode XF86AudioRaiseVolume exec amixer set Master 10%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob

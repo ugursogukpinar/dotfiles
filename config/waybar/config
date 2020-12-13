@@ -10,10 +10,11 @@
 		"custom/separator",
 		"idle_inhibitor",
 		"custom/separator",
-		"sway/mode",
+		"sway/mode"
 	],
 	"modules-center": [
-		"sway/window"
+		"sway/window",
+		"custom/recorder"
 	],
 	"modules-right": [
 		"tray",
@@ -52,51 +53,58 @@
 			"activated": "",
 			"deactivated": ""
 		}
+	},
+	"custom/recorder": {
+		"format": "",
+		"return-type": "json",
+		"interval": 1,
+		"exec": "echo '{\"class\": \"recording\"}'",
+		"exec-if": "pgrep wf-recorder"
 	}
 },
-	{
-		"layer": "bottom",
-		"position": "bottom",
-		"margin-right": 5,
-		"margin-left": 5,
-		"margin-top": 5,
-		"modules-left": ["custom/weather", "wlr/taskbar"],
-		"modules-center": [],
-		"modules-right": [
-			"sway/language",
-			"backlight",
-			"disk#1",
-			"disk#2",
-			"memory",
-			"cpu",
-			"battery",
-			"pulseaudio",
-			"custom/spotify"
-		],
-		"wlr/taskbar": {
-			"all-outputs": false,
-			"format": "{icon}",
-		    "icon-theme": "DarK-svg",
-			"icon-size": 24,
-			"on-click": "activate",
-			"on-middle-click": "close",
-			"on-right-click": "minimize"
-		},
-		"custom/weather": {
-			"exec": "~/.config/waybar/modules/weather.sh",
-			"interval": 3600
-		},
-		"custom/spotify": {
-			"interval": 1,
-			"return-type": "json",
-			"exec": "~/.config/waybar/modules/spotify.sh",
-			"exec-if": "pgrep spotify",
-			"escape": true
-		},
-		"custom/pacman": {
-			"format": " {}",
-			"interval": 1800, // every 30 minutes
-			"exec": "checkupdates | wc -l", // # of updates
+{
+	"layer": "bottom",
+	"position": "bottom",
+	"margin-right": 5,
+	"margin-left": 5,
+	"margin-top": 5,
+	"modules-left": ["custom/weather", "wlr/taskbar"],
+	"modules-center": [],
+	"modules-right": [
+		"sway/language",
+		"backlight",
+		"disk#1",
+		"disk#2",
+		"memory",
+		"cpu",
+		"battery",
+		"pulseaudio",
+		"custom/spotify"
+	],
+	"wlr/taskbar": {
+		"all-outputs": false,
+		"format": "{icon}",
+		"icon-theme": "DarK-svg",
+		"icon-size": 24,
+		"on-click": "activate",
+		"on-middle-click": "close",
+		"on-right-click": "minimize"
+	},
+	"custom/weather": {
+		"exec": "~/.config/waybar/modules/weather.sh",
+		"interval": 3600
+	},
+	"custom/spotify": {
+		"interval": 1,
+		"return-type": "json",
+		"exec": "~/.config/waybar/modules/spotify.sh",
+		"exec-if": "pgrep spotify",
+		"escape": true
+	},
+	"custom/pacman": {
+		"format": " {}",
+		"interval": 1800, // every 30 minutes
+		"exec": "checkupdates | wc -l", // # of updates
 			"exec-if": "exit 0", // always run; consider advanced run conditions
 			// "on-click": "~/.config/waybar/modules/update-system.sh; pkill -RTMIN+8 waybar", // update system
 			"signal": 8,
@@ -108,7 +116,10 @@
 	},
 	"backlight": {
 		"format": "{icon} {percent}%",
-		"format-icons": ["", ""],
+		"format-icons": [
+			"",
+			""
+		]
 		// "on-scroll-up": "brightnessctl set +5%",
 		// "on-scroll-down": "brightnessctl set 5%-"
 		},
