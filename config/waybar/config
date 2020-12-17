@@ -68,7 +68,10 @@
 	"margin-right": 5,
 	"margin-left": 5,
 	"margin-top": 5,
-	"modules-left": ["custom/weather", "wlr/taskbar"],
+	"modules-left": [
+        "custom/weather", 
+        "wlr/taskbar"
+    ],
 	"modules-center": [],
 	"modules-right": [
 		"sway/language",

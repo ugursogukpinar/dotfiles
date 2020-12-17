@@ -4,6 +4,6 @@ profile {
 }
 
 profile {
-	output eDP-1 enable scale 1.7777777777777 position 0,0
+	output eDP-1 mode 2560x1440 scale 1.7777777777777 position 0,0
 }
 

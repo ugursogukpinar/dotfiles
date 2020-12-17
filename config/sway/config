@@ -192,6 +192,10 @@ no_focus [app_id="avizo-service"]
     # Clipman history
     $bindtocode $mod+Comma exec clipman pick --histpath="~/.local/share/clipman-primary.json" -t wofi
 
+    # move workspace to output
+    $bindtocode $mod+Shift+w exec swaymsg -t get_outputs | jq '.[] | select(.focused!=true) | .name' | head -n1 | xargs swaymsg move workspace to
+
+
     $bindtocode $mod+Control+Right exec playerctl next
     $bindtocode $mod+Control+Left exec playerctl previous
     $bindtocode $mod+Control+Up exec playerctl play-pause
@@ -361,7 +365,7 @@ bar {
 exec blueman-applet
 exec nm-applet --indicator
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
-exec ulauncher
+exec ulauncher && ulauncher-toggle
 exec thunderbird
 exec avizo-service
 exec mako

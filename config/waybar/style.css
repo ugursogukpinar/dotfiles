@@ -1,7 +1,7 @@
 * {
 	font-size: 14px;
 	font-family: Roboto, 'Symbols Nerd Font';
-	min-height: 30px;
+	/*min-height: 30px;*/
 }
 
 window#waybar {
