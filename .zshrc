@@ -10,16 +10,16 @@ export XDG_DATA_DIRS=/usr/share/:/usr/local/share/:/var/lib/snapd/desktop
 export XKB_DEFAULT_LAYOUT=us
 
 if [ $(tty) = "/dev/tty1" ]; then
-    # export XDG_CURRENT_DESKTOP=Unity
-    export XDG_CURRENT_DESKTOP=sway
+	# export XDG_CURRENT_DESKTOP=Unity
+	export XDG_CURRENT_DESKTOP=sway
 	export CLUTTER_BACKEND=wayland 
-    export XDG_SESSION_TYPE=wayland
+	export XDG_SESSION_TYPE=wayland
 	# export GDK_BACKEND=wayland
 	# export QT_QPA_PLATFORM=wayland
-    # export MOZ_ENABLE_WAYLAND=1
-    
-    export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-    export QT_WAYLAND_FORCE_DPI=physical
+		# export MOZ_ENABLE_WAYLAND=1
+		
+	export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+	export QT_WAYLAND_FORCE_DPI=physical
 	export ECORE_EVAS_EVAS_ENGINE=wayland_egl
 	export ELM_ENGINE=wayland_egl
 	export SDL_VIDEODRIVER=wayland
@@ -34,7 +34,7 @@ fi
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 
