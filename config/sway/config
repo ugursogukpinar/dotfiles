@@ -160,10 +160,6 @@ for_window [class="^.*"] inhibit_idle fullscreen
 for_window [app_id="^.*"] inhibit_idle fullscreen
 
 for_window [app_id="ulauncher"] border none
-for_window [app_id="avizo-service"] border none 
-
-
-no_focus [app_id="avizo-service"]
 
 # for_window [class="*"]
 
@@ -211,19 +207,11 @@ no_focus [app_id="avizo-service"]
     $bindtocode $mod+Shift+R exec $screenrecorder
 
 
-    # $bindtocode XF86AudioRaiseVolume exec amixer set Master 10%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
-    # $bindtocode XF86AudioLowerVolume exec amixer set Master 10%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
-    # $bindtocode XF86AudioMute exec amixer -D pulse set Master 1+ toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
-    #$bindtocode XF86AudioMicMute exec amixer -D pulse set Capture toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+    $bindtocode XF86AudioRaiseVolume exec amixer set Master 10%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+    $bindtocode XF86AudioLowerVolume exec amixer set Master 10%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+    $bindtocode XF86AudioMute exec amixer -D pulse set Master 1+ toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
+    $bindtocode XF86AudioMicMute exec amixer -D pulse set Capture toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
     
-    $bindtocode XF86AudioRaiseVolume exec volumectl raise
-    $bindtocode XF86AudioLowerVolume exec volumectl lower
-    $bindtocode XF86AudioMute exec volumectl mute
-
-
-    # $bindtocode XF86MonBrightnessUp exec lightctl raise
-    # $bindtocode XF86MonBrightnessDown exec lightctl lower
-
     $bindtocode XF86MonBrightnessDown exec brightnessctl set 5%- | brightnessctl --machine-readable | cut -f 4 -d ',' | cut -f 1 -d '%' > $SWAYSOCK.wob
     $bindtocode XF86MonBrightnessUp exec brightnessctl set +5% | brightnessctl --machine-readable | cut -f 4 -d ',' | cut -f 1 -d '%' > $SWAYSOCK.wob
 
@@ -367,7 +355,7 @@ exec nm-applet --indicator
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 exec ulauncher && ulauncher-toggle
 exec thunderbird
-exec avizo-service
+# exec avizo-service
 exec mako
 # exec 1password
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
