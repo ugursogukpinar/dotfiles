@@ -1,13 +1,13 @@
 * {
 	font-size: 14px;
-	font-family: Roboto, 'Symbols Nerd Font';
-	/*min-height: 30px;*/
+	font-family: Roboto, 'Symbols Nerd Font';	
 }
 
 window#waybar {
 	color: #d8dee9;
 	background: rgba(46,52,64, 0.75);
 	border-radius: 7px;
+	min-height: 30px;
 }
 
 #workspaces,

@@ -44,12 +44,12 @@ set $samsung_monitor "Samsung Electric Company U28E590 HTPKA00046"
 ##########################################
 ### Output configuration
 ##########################################
-output $samsung_monitor mode 2560x1440 scale 1.25
+output $samsung_monitor mode 2560x1440 scale 1.2
 output $laptop_screen mode 2560x1440 scale 1.7777777777777
 output * bg $wallpaper fill
 
-bindswitch --reload --locked lid:on output $laptop_screen disable dpms off
-bindswitch --reload --locked lid:off output $laptop_screen enable dpms on
+bindswitch --reload --locked lid:on output $laptop_screen disable
+bindswitch --reload --locked lid:off output $laptop_screen enable
 
 
 ##########################################
@@ -92,7 +92,7 @@ titlebar_border_thickness 0
 popup_during_fullscreen leave_fullscreen
 
 
-seat seat0 xcursor_theme 'volantes-cursors' 48
+seat seat0 xcursor_theme 'volantes_cursors' 48
 
 ##########################################
 ### Gnome settings
@@ -104,7 +104,7 @@ exec_always {
     gsettings set $gnome-schema font-name 'Roboto 10'
     gsettings set $gnome-schema monospace-font-name 'Roboto Mono 10'
     gsettings set $gnome-schema document-font-name 'Roboto 10'
-    gsettings set $gnome-schema cursor-theme 'volantes-cursors'
+    gsettings set $gnome-schema cursor-theme 'volantes_cursors'
     gsettings set $gnome-schema cursor-size 48
     gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Bold 10'
     gsettings set org.gnome.desktop.wm.preferences button-layout ''
@@ -349,15 +349,13 @@ bar {
 ##############################################################
 # Autostart:
 ##############################################################
-# exec gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+exec gnome-keyring-daemon --start
 exec blueman-applet
 exec nm-applet --indicator
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 exec ulauncher && ulauncher-toggle
 exec thunderbird
-# exec avizo-service
 exec mako
 # exec 1password
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
-# exec_always pkill kanshi || true && kanshi
 ##############################################################

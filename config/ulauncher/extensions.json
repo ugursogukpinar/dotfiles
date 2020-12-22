@@ -2,43 +2,43 @@
     "com.github.kuenzelit.ulauncher-firefox-bookmarks": {
         "id": "com.github.kuenzelit.ulauncher-firefox-bookmarks",
         "url": "https://github.com/KuenzelIT/ulauncher-firefox-bookmarks",
-        "updated_at": "2020-12-05T01:41:54.732405",
+        "updated_at": "2020-12-21T22:49:08.663912",
         "last_commit": "77f1de0adfc2e79ce767f645ae8ad0a0dda2783e",
         "last_commit_time": "2019-12-07T17:27:46"
     },
     "com.github.brpaz.ulauncher-aws": {
         "id": "com.github.brpaz.ulauncher-aws",
         "url": "https://github.com/brpaz/ulauncher-aws",
-        "updated_at": "2020-12-05T01:47:26.558077",
+        "updated_at": "2020-12-21T22:49:19.880835",
         "last_commit": "23b173e418e1d69342778fbea343d4c336d6eb54",
         "last_commit_time": "2020-11-14T17:31:23"
     },
     "com.github.manahter.ulauncher-ip-analysis": {
         "id": "com.github.manahter.ulauncher-ip-analysis",
         "url": "https://github.com/manahter/ulauncher-IP-Analysis",
-        "updated_at": "2020-12-07T00:16:09.667497",
+        "updated_at": "2020-12-21T22:49:46.442203",
         "last_commit": "1a52cd56cb550c0d9ce1447cde7826fdf64ad5d7",
         "last_commit_time": "2020-11-22T14:42:29"
     },
     "com.github.ceroprogramming.ulauncher-pulsecontrol": {
         "id": "com.github.ceroprogramming.ulauncher-pulsecontrol",
         "url": "https://github.com/CeroProgramming/ulauncher-pulsecontrol",
-        "updated_at": "2020-12-07T00:16:35.904356",
+        "updated_at": "2020-12-21T22:49:49.322623",
         "last_commit": "764a8b11202ce55dd574fec10ab447601958ed29",
         "last_commit_time": "2020-11-27T15:56:19"
     },
     "com.github.fisadev.ulauncher-better-file-browser": {
         "id": "com.github.fisadev.ulauncher-better-file-browser",
         "url": "https://github.com/fisadev/ulauncher-better-file-browser",
-        "updated_at": "2020-12-07T00:19:47.686298",
+        "updated_at": "2020-12-21T22:49:51.144826",
         "last_commit": "8ec8a0dda09e172de62051cd1f251816ce4af368",
         "last_commit_time": "2019-09-06T19:20:09"
     },
     "com.github.brpaz.ulauncher-github": {
         "id": "com.github.brpaz.ulauncher-github",
         "url": "https://github.com/brpaz/ulauncher-github",
-        "updated_at": "2020-12-10T09:30:29.381363",
-        "last_commit": "a0db609071863a678c782bd849c10d2d2c763e01",
-        "last_commit_time": "2020-12-08T14:54:43"
+        "updated_at": "2020-12-21T22:50:05.415888",
+        "last_commit": "93e3b043f60c0a07275933aa9a9c653f015a8d47",
+        "last_commit_time": "2020-12-12T15:59:01"
     }
 }

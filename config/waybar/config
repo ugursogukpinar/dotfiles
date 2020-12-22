@@ -34,8 +34,8 @@
 			"urgent": "",
 			"focused": "",
 			"default": ""
-		}
-	},
+		
+}	},
 	"sway/mode": {
 		"format": "{}"
 	},
@@ -69,12 +69,12 @@
 	"margin-left": 5,
 	"margin-top": 5,
 	"modules-left": [
-        "custom/weather", 
-        "wlr/taskbar"
+        "custom/weather" 
+        // "wlr/taskbar"
     ],
 	"modules-center": [],
 	"modules-right": [
-		"sway/language",
+		// "sway/language",
 		"backlight",
 		"disk#1",
 		"disk#2",
@@ -123,9 +123,7 @@
 			"",
 			""
 		]
-		// "on-scroll-up": "brightnessctl set +5%",
-		// "on-scroll-down": "brightnessctl set 5%-"
-		},
+	},
 	"pulseaudio": {
 		"format": "{icon} {volume}%  {format_source}",
 		"format-bluetooth": "{icon} {volume}%  {format_source}",

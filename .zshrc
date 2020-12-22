@@ -16,7 +16,7 @@ if [ $(tty) = "/dev/tty1" ]; then
 	export XDG_SESSION_TYPE=wayland
 	# export GDK_BACKEND=wayland
 	# export QT_QPA_PLATFORM=wayland
-		# export MOZ_ENABLE_WAYLAND=1
+    # export MOZ_ENABLE_WAYLAND=1
 		
 	export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 	export QT_WAYLAND_FORCE_DPI=physical
