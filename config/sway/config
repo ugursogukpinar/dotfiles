@@ -25,7 +25,7 @@ set $bindtocode bindsym --to-code
 set $wallpapers_path $HOME/wallpapers
 set $wallpaper `find $wallpapers_path -type f | shuf -n 1`
 
-set $screenrecorder `bash $HOME/scripts/toggle-screen-recorder.sh`
+set $screenrecorder `bash $HOME/scripts/toggle-screen-recorder.sh && pkill -RTMIN+8 waybar`
 
 set $workspace1 "1- Web"
 set $workspace2 "2- Terminals"

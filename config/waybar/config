@@ -57,9 +57,10 @@
 	"custom/recorder": {
 		"format": "",
 		"return-type": "json",
-		"interval": 1,
+		"interval": "once",
+		"signal": 8,
 		"exec": "echo '{\"class\": \"recording\"}'",
-		"exec-if": "pgrep wf-recorder"
+		"exec-if": "pgrep 'wf-recorder'"
 	}
 },
 {
