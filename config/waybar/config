@@ -69,12 +69,12 @@
 	"margin-left": 5,
 	"margin-top": 5,
 	"modules-left": [
-        "custom/weather" 
+        "custom/weather"
         // "wlr/taskbar"
     ],
 	"modules-center": [],
 	"modules-right": [
-		// "sway/language",
+		"sway/language",
 		"backlight",
 		"disk#1",
 		"disk#2",

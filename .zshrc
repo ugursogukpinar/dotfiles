@@ -10,13 +10,15 @@ export XDG_DATA_DIRS=/usr/share/:/usr/local/share/:/var/lib/snapd/desktop
 export XKB_DEFAULT_LAYOUT=us
 
 if [ $(tty) = "/dev/tty1" ]; then
+    eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+    export SSH_AUTH_SOCK
 	# export XDG_CURRENT_DESKTOP=Unity
 	export XDG_CURRENT_DESKTOP=sway
 	export CLUTTER_BACKEND=wayland 
 	export XDG_SESSION_TYPE=wayland
 	# export GDK_BACKEND=wayland
 	# export QT_QPA_PLATFORM=wayland
-    # export MOZ_ENABLE_WAYLAND=1
+    export MOZ_ENABLE_WAYLAND=1
 		
 	export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 	export QT_WAYLAND_FORCE_DPI=physical
