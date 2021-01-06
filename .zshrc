@@ -1,5 +1,6 @@
 export ZSH="/home/ugursogukpinar/.oh-my-zsh"
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+export GOPATH=$HOME/go
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
 export LANG=en_US.UTF-8
 export VISUAL="vim"
 export TERM=xterm-256color

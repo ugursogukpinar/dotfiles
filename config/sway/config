@@ -149,6 +149,7 @@ assign [app_id="filezilla"] workspace $workspace4
 assign [class="Slack"] workspace $workspace5
 assign [class="Thunderbird"] workspace $workspace5
 assign [app_id="thunderbird"] workspace $workspace5
+assign [app_id="evolution"] workspace $workspace5
 
 assign [class="Spotify"] workspace $workspace0
 assign [instance="spotify"] workspace $workspace0
@@ -160,6 +161,7 @@ for_window [app_id="^.*"] inhibit_idle fullscreen
 for_window [app_id="ulauncher"] border none
 
 for_window [title="Firefox — Sharing Indicator"] floating enable
+for_window [title="Picture-in-Picture"] floating enable
 
 
 ##########################################
@@ -350,8 +352,10 @@ exec blueman-applet
 exec nm-applet --indicator
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 exec ulauncher && ulauncher-toggle
-exec thunderbird
+# exec thunderbird
+exec evolution
 exec mako
+exec gammastep
 # exec 1password
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 ##############################################################
