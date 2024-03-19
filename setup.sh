@@ -18,12 +18,14 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 # create symbolic link source = ./.zshtc destination = ~/.zshrc
-ln -s .zshrc ~/.zshrc
-ln -s nvim ~/.config/nvim
-ln -s .tmux ~/.tmux
-ln -s .tmux.conf ~/.tmux.conf
+ln -s $(pwd)/.zshrc ~/.zshrc
+ln -s $(pwd)/nvim ~/.config/nvim
+ln -s $(pwd)/.tmux ~/.tmux
+ln -s $(pwd)/.tmux.conf ~/.tmux.conf
 
 if [[ $(uname) == "Darwin" ]]; then
-	ln -s .yabairc ~/.yabairc
-	ln -s skhd ~/.config/skhd
+	ln -s $(pwd)/.yabairc ~/.yabairc
+	ln -s $(pwd)/skhd ~/.config/skhd
 fi
+
+# get current file directory
