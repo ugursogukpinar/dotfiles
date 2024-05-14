@@ -6,3 +6,4 @@ vim.opt.showtabline = 0
 vim.opt.hidden = false
 
 vim.g.autoformat = true
+vim.cmd("colorscheme murphy")

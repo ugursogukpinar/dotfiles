@@ -6,6 +6,8 @@
 -- use `vim.keymap.set` instead
 local map = vim.keymap.set
 
+map("n", "<C-a>", "ggVG", { desc = "Select all" })
+
 map("n", "<C-Left>", "<C-w>h", { desc = "Go to left window", remap = true })
 map("n", "<C-Down>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<C-Up>", "<C-w>k", { desc = "Go to upper window", remap = true })
@@ -24,3 +26,5 @@ map("n", "<leader>kw", "<cmd>%bd<cr>", { desc = "Delete all buffers" })
 map("n", "<C-f>", require("telescope.builtin").current_buffer_fuzzy_find, { desc = "Find in Current" })
 map("n", "<leader>§", require("telescope.builtin").buffers, { desc = "Show open buffers" })
 map("n", "<leader><space>", require("telescope.builtin").find_files, { desc = "Find Files" })
+
+map({ "n" }, "<leader>e", ":Neotree reveal position=float toggle<cr>", { desc = "Toggle neotree", remap = true })

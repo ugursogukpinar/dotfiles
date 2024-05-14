@@ -41,11 +41,11 @@ yabai -m config mouse_drop_action swap
 
 # general space settings
 yabai -m config layout bsp
-yabai -m config top_padding 04
-yabai -m config bottom_padding 04
-yabai -m config left_padding 04
-yabai -m config right_padding 04
-yabai -m config window_gap 04
+yabai -m config top_padding 8
+yabai -m config bottom_padding 8
+yabai -m config left_padding 8
+yabai -m config right_padding 8
+yabai -m config window_gap 8
 
 # app settings
 yabai -m rule --add app="^System Settings$" sticky=on manage=off
@@ -79,13 +79,13 @@ yabai -m rule --add app="^Surfshark$" sticky=on manage=off
 yabai -m rule --add app="^Archive Utility$" sticky=on manage=off
 yabai -m rule --add app="^Huddle with*" sticky=on manage=off
 
-## Signals
+# Signals
 yabai -m rule --add app="^Google Chrome$" space=^1
 yabai -m rule --add app="^Brave Browser$" space=^1
 yabai -m rule --add app="^Firefox$" space=^1
 # yabai -m rule --add app="^Safari$" space=^1
-# yabai -m rule --add app="^Arc$" space=^1
-yabai -m rule --add app="^Arc$" title="^Space 1$" manage=off
+yabai -m rule --add app="^Arc$" space=^1
+# yabai -m rule --add app="^Arc$" title="^Space 1$" manage=off
 
 yabai -m rule --add app="^Alacritty$" space=^2
 yabai -m rule --add app="^Warp$" space=^2
@@ -94,6 +94,7 @@ yabai -m rule --add app="^kitty$" space=^2
 yabai -m rule --add app="^Sublime Text$" space=^3
 yabai -m rule --add app="^Visual Studio Code$" space=^3
 yabai -m rule --add app="^Code$" space=^3
+yabai -m rule --add app="^Obsidian$" space=^3
 
 yabai -m rule --add app="^DataGrip$" space=^4
 # yabai -m rule --add app="^robo 3T$" space=^4
@@ -109,7 +110,7 @@ yabai -m rule --add app="^WhatsApp$" space=^5
 yabai -m rule --add app="^Spark Desktop$" space=^6
 
 yabai -m rule --add app="^Spotify$" space=^7
-yabai -m rule --add app="^Stremio$" space=^7
+yabai -m rule --add app="^stremio$" space=^10
 
 # yabai -m rule --add app="^Notion$" space=^9
 echo "yabai configuration loaded.."

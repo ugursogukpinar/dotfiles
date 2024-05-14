@@ -11,6 +11,12 @@ return {
           require("telescope").load_extension("fzf")
         end,
       },
+      {
+        "nvim-telescope/telescope-media-files.nvim",
+        config = function()
+          require("telescope").load_extension("media_files")
+        end,
+      },
     },
     keys = {
       -- add a keymap to browse plugin files
@@ -21,9 +27,14 @@ return {
     opts = {
       defaults = {
         layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top" },
+        layout_config = { prompt_position = "top", horizontal = { preview_cutoff = 0 } },
         sorting_strategy = "ascending",
         winblend = 0,
+      },
+      pickers = {
+        colorscheme = {
+          enable_preview = true,
+        },
       },
     },
     config = function()

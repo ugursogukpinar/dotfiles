@@ -6,6 +6,7 @@ return {
       projects = { -- define project roots
         "~/.config/nvim/",
         "~/works/SmartGift/code/sgb-workspace/*",
+        "~/works/SmartGift/code/send-with-smartgift/*",
         "~/works/kyrosmobile/ecosh/backend",
         "~/works/kyrosmobile/ecosh/frontend",
         "~/works/sonicdigital/51nsights/app/",
