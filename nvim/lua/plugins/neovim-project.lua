@@ -1,5 +1,4 @@
 return {
-
   {
     "coffebar/neovim-project",
     opts = {
@@ -12,6 +11,10 @@ return {
         "~/works/sonicdigital/51nsights/app/",
         "~/works/sonicdigital/51nsights/51nsights-frontend",
         "~/works/poc/",
+        "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Zettlekasten",
+      },
+      picker = {
+        type = "telescope", -- or "fzf-lua"
       },
     },
     init = function()
@@ -20,7 +23,10 @@ return {
     end,
     dependencies = {
       { "nvim-lua/plenary.nvim" },
+      -- optional picker
       { "nvim-telescope/telescope.nvim", tag = "0.1.4" },
+      -- optional picker
+      { "ibhagwan/fzf-lua" },
       { "Shatur/neovim-session-manager" },
     },
     lazy = false,

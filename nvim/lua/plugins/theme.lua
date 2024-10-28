@@ -10,19 +10,9 @@ return {
     end,
   },
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 10000,
-    opts = {
-      style = "storm",
-    },
-  },
-
-  -- Configure LazyVim to load gruvbox
-  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-storm",
+      colorscheme = "catppuccin",
     },
   },
 }

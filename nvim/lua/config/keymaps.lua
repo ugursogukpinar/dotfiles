@@ -21,10 +21,40 @@ map("n", "<C-S-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window
 -- local neovim = require("telescope.builtin")
 
 map("n", "<C-p>", "<cmd>Telescope neovim-project discover<cr>", { desc = "Projects" })
-
-map("n", "<leader>kw", "<cmd>%bd<cr>", { desc = "Delete all buffers" })
 map("n", "<C-f>", require("telescope.builtin").current_buffer_fuzzy_find, { desc = "Find in Current" })
 map("n", "<leader>§", require("telescope.builtin").buffers, { desc = "Show open buffers" })
 map("n", "<leader><space>", require("telescope.builtin").find_files, { desc = "Find Files" })
 
-map({ "n" }, "<leader>e", ":Neotree reveal position=float toggle<cr>", { desc = "Toggle neotree", remap = true })
+map("n", "<leader>ss", function()
+  require("telescope.builtin").lsp_document_symbols({
+    symbols = LazyVim.config.get_kind_filter(),
+  })
+end, { desc = "Goto Symbol (Document)" })
+
+map("n", "<leader>sS", function()
+  require("telescope.builtin").lsp_workspace_symbols({
+    symbols = LazyVim.config.get_kind_filter(),
+  })
+end, { desc = "Goto Symbol (Workspace)" })
+
+-- map(
+--   "n",
+--   "<leader>sS",
+--   require("telescope.builtin").lsp_workspace_symbols({ query = vim.fn.input("") }),
+--   { desc = "Search Workspace Symbols" }
+-- )
+
+map({ "n" }, "<leader>e", "<cmd>Neotree reveal position=float toggle<cr>", { desc = "Toggle neotree", remap = true })
+
+-- Function to close all windows and open the dashboard
+function OpenDashboard()
+  -- Close all buffers
+  -- vim.cmd("bufdo bdelete")
+  vim.cmd("%bd")
+  -- Open the dashboard
+  vim.cmd("Dashboard") -- If using `dashboard-nvim`
+  -- vim.cmd('Alpha')  -- If using `alpha-nvim`
+end
+
+-- Keybinding to trigger the function
+vim.api.nvim_set_keymap("n", "<leader>kw", ":lua OpenDashboard()<CR>", { noremap = true, silent = true })

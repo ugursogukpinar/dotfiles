@@ -1,27 +1,18 @@
 return {
-  -- {
-  --   "neovim/nvim-lspconfig",
-  --   config = function()
-  --     require("lspconfig").tsserver.setup({
-  --       init_options = {
-  --         preferences = {
-  --           disableSuggestions = true,
-  --         },
-  --       },
-  --     })
-  --   end,
-  -- },
-  --
-  -- {
-  --   "quick-lint/quick-lint-js",
-  --   tag = "3.1.0",
-  --   cond = function(plugin)
-  --     -- TODO(strager): Don't make this happen multiple times.
-  --     plugin.dir = plugin.dir .. "/plugin/vim/quick-lint-js.vim"
-  --     return true
-  --   end,
-  --   config = function(_plugin)
-  --     require("lspconfig/quick_lint_js").setup({})
-  --   end,
-  -- },
+  "neovim/nvim-lspconfig",
+  opts = {
+    inlay_hints = { enabled = false },
+    servers = { eslint = {} },
+    setup = {
+      eslint = function()
+        require("lazyvim.util").lsp.on_attach(function(client)
+          if client.name == "eslint" then
+            client.server_capabilities.documentFormattingProvider = true
+          elseif client.name == "tsserver" then
+            client.server_capabilities.documentFormattingProvider = false
+          end
+        end)
+      end,
+    },
+  },
 }
