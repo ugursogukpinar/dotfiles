@@ -4,6 +4,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
 
+      "tpope/vim-fugitive",
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
@@ -15,6 +16,12 @@ return {
         "nvim-telescope/telescope-media-files.nvim",
         config = function()
           require("telescope").load_extension("media_files")
+        end,
+      },
+      {
+        "isak102/telescope-git-file-history.nvim",
+        config = function()
+          require("telescope").load_extension("git_file_history")
         end,
       },
     },
