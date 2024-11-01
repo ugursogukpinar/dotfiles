@@ -95,6 +95,7 @@ yabai -m rule --add app="^Sublime Text$" space=^3
 yabai -m rule --add app="^Visual Studio Code$" space=^3
 yabai -m rule --add app="^Code$" space=^3
 yabai -m rule --add app="^Obsidian$" space=^3
+yabai -m rule --add app="^Calendar$" space=^3
 
 yabai -m rule --add app="^DataGrip$" space=^4
 # yabai -m rule --add app="^robo 3T$" space=^4
@@ -102,14 +103,17 @@ yabai -m rule --add app="^[Rr]obo 3T$" space=^4
 yabai -m rule --add app="^Studio 3T$" space=^4
 yabai -m rule --add app="^Postman$" space=^4
 yabai -m rule --add app="^File Zilla$" space=^4
+yabai -m rule --add app="^Beekeeper Studio$" space=^4
 
 # yabai -m rule --add app="^Slack$" space=^5
 yabai -m rule --add app="^Discord$" space=^6
 yabai -m rule --add app="^WhatsApp$" space=^5
+yabai -m rule --add app="^Messages$" space=^5
 
 yabai -m rule --add app="^Spark Desktop$" space=^6
 
 yabai -m rule --add app="^Spotify$" space=^7
+yabai -m rule --add app="^NetNewsWire$" space=^8
 yabai -m rule --add app="^stremio$" space=^10
 
 # yabai -m rule --add app="^Notion$" space=^9
