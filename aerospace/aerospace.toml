@@ -112,6 +112,19 @@ run = ['move-node-to-workspace 4']
 [[on-window-detected]]
 if.app-name-regex-substring = 'Studio 3T'
 run = ['move-node-to-workspace 4']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = ['move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-id = 'com.readdle.SparkDesktop'
+run = ['move-node-to-workspace 6']
+
+[[on-window-detected]]
+if.app-id = 'com.ranchero.NetNewsWire-Evergreen'
+run = ['move-node-to-workspace 8']
+
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
