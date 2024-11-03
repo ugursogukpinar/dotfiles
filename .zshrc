@@ -25,7 +25,7 @@ eval "$(starship init zsh)"
 # Oh My ZSH Setup
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=""
-plugins=(git zoxide tmux tmuxinator fzf)
+plugins=(git zoxide tmux tmuxinator fzf golang)
 source $ZSH/oh-my-zsh.sh
 
 
