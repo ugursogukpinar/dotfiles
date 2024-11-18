@@ -92,3 +92,9 @@ function logg() {
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
  exec tmux new-session -A -s main
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ugursogukpinar/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ugursogukpinar/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ugursogukpinar/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ugursogukpinar/google-cloud-sdk/completion.zsh.inc'; fi

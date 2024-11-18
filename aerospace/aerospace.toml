@@ -154,7 +154,7 @@ run = ['move-node-to-workspace 8']
 #     activate
 # end tell'
 # '''
-cmd-alt-ctrl-shift-enter = 'exec-and-forget open -n -a kitty'
+cmd-alt-ctrl-shift-enter = 'exec-and-forget open -n -a WezTerm'
 cmd-alt-ctrl-shift-e = 'exec-and-forget open ~'
 cmd-alt-ctrl-shift-f = 'fullscreen'
 cmd-alt-ctrl-shift-space = 'layout floating tiling'
